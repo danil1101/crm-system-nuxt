@@ -1,7 +1,11 @@
 export interface IMenuItem {
 	name: string
-	url: string
+	url?: string
 	icon: string
+	children?: {
+		name: string
+		url: string
+	}[]
 }
 
 export const MENU_DATA: IMenuItem[] = [
@@ -23,7 +27,20 @@ export const MENU_DATA: IMenuItem[] = [
 	{
 		name: 'Finance',
 		icon: 'ph:contactless-payment',
-		url: '/finance',
+		children: [
+			{
+				name: 'Income',
+				url: '/finance/income',
+			},
+			{
+				name: 'Outcome',
+				url: '/finance/outcome',
+			},
+			{
+				name: 'Salaries',
+				url: '/finance/salaries',
+			},
+		]
 	},
 	{
 		name: 'Training area',
