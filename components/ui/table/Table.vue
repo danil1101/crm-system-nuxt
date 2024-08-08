@@ -5,7 +5,7 @@ const props = defineProps<{
 }>()
 
 const columns = ref(props.columns)
-
+const emit = defineEmits(['click'])
 const selectedColumns = ref(columns)
 const columnsTable = computed(() =>
 	columns.value.filter(column => selectedColumns.value.includes(column))
@@ -107,6 +107,7 @@ const { data: rows, pending } = await useLazyAsyncData<
 		<!-- Table -->
 		<UTable
 			v-model:sort="sort"
+			@select="item => emit('click', item)"
 			:rows="rows as any"
 			:columns="columnsTable"
 			:loading="pending"

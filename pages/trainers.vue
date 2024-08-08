@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import { Table } from '~/components/ui/table'
+import ModalTrainers from '~/components/ui/modals/ModalTrainers.vue'
 
 const columns = [
 	{
@@ -65,6 +66,8 @@ const columnsContacts = [
 
 <template>
 	<div class="flex flex-col gap-6">
+		<ModalTrainers :isOpen="visibleModal" />
+
 		<Table title="Trainers" :columns="columns">
 			<UButton
 				size="2xs"

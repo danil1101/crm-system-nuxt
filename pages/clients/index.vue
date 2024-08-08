@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import { Table } from '~/components/ui/table'
 
+const router = useRouter()
 const columns = [
 	{
 		key: 'id',
@@ -61,11 +62,15 @@ const columnsContacts = [
 		sortable: false
 	}
 ]
+
+const onClick = (item: any) => {
+	router.push(`/clients/${item.id}`)
+}
 </script>
 
 <template>
 	<div class="flex flex-col gap-6">
-		<Table title="Clients" :columns="columns">
+		<Table title="Clients" :columns="columns" @click="onClick">
 			<UButton
 				size="2xs"
 				color="emerald"

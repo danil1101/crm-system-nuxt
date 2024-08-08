@@ -3,6 +3,7 @@ export default defineNuxtConfig({
 	modules: [
 		'@nuxt/ui',
 		'@nuxt/image',
+		'@samk-dev/nuxt-vcalendar',
 		[
 			'@nuxtjs/google-fonts',
 			{

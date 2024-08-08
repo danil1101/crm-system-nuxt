@@ -9,7 +9,7 @@ interface Props {
 }
 
 withDefaults(defineProps<Props>(), {
-	as: 'button',
+	as: 'button'
 })
 </script>
 
@@ -21,4 +21,3 @@ withDefaults(defineProps<Props>(), {
 		<slot />
 	</component>
 </template>
-~/utils/utils
